@@ -64,7 +64,7 @@ a {
 
 #ts-status {
     background-color: white;
-    height: calc(100vh - 370px);
+    height: calc(100vh - 375px);
     min-height: 360px;
     overflow-x: auto;
     overflow-y: hidden;
@@ -82,7 +82,7 @@ a {
 
 #ts-grid {
     background-color: white;
-    height: calc(100vh - 230px);
+    height: calc(100vh - 235px);
     min-height: 500px;
     overflow-y: auto;
     overflow-x: auto;
@@ -93,7 +93,7 @@ a {
 
 #manage-grid {
     background-color: white;
-    height: calc(100vh - 230px);
+    height: calc(100vh - 235px);
     min-height: 500px;
     overflow-y: auto;
     overflow-x: auto;
