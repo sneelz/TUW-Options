@@ -1,0 +1,286 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1;maximum-scale=1.0; user-scalable=0;">
+
+    <title>AT&T Template Swap Tool</title>
+
+    <!--SCRIPTS-->
+    <script src="static/bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="static/bower_components/d3/d3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+    <script src="static/js/scripts.js"></script>
+
+    <!--STYLESHEETS-->
+    <link rel="stylesheet" href="static/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="static/bower_components/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" href="static/bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css"> 
+
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="">AT&T Template Swap Tool</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left"></ul>
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li><a href="/manage.html">Manage Template Swaps</a></li>
+                    <li><a>Logout</a></li>
+                    <li><a>Hello user!</a></li>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <div id="blue-background">
+
+    </div>
+
+    <div id="container-fluid">
+
+        <div class="row">
+            <div class="col-md-7 col-sm-6 col-xs-12">
+                <h1 class="ts-name">[Template Swap Name]</h1>
+                
+                <p class="ts-description"><a href="#" id="view-show" class="showLink" onclick="showHide('view');return false;">>> Show Details</a></p>
+                <div id="view" class="more">
+                    <p class="ts-description">Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet.<br /> 
+                    <a href="#" id="view-hide" class="hideLink" onclick="showHide('view');return false;"><< Hide Details</a></p>
+                </div>
+            </div>
+
+            <div class="actions col-md-5 col-sm-6 col-xs-12">
+                    
+                    <li id="ts-dropdown"><select style="padding: 5px;">
+                        <option value="0">Select a Template Swap</option>
+                        <option value="1">Template Swap #1</option>
+                        <option value="2">Template Swap #2</option>
+                    </select></li>
+                    <li><button class="ce-button" data-toggle="modal" data-target="#editModal">Edit</button></li>
+                    <li><button class="ce-button" data-toggle="modal" data-target="#createModal">Create</button></li>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 col-sm-4 col-xs-12" style="margin-bottom: 25px;">                 
+                <div id="ts-status">
+                    <div class="row header-row">
+                        <div class="header-text">Template Swap Status</div>
+                    </div>
+
+                    <br />
+                    <a data-toggle="modal" data-target="#statusModal">Status modal link</a>
+                </div>
+
+                <div style="height:25px;"></div>
+
+                <div id="ts-execute">
+                    <div id="row">
+                        <div class="col-md-8 col-sm-6 col-sm-12" style="margin-bottom: 20px;">
+                            <select style="padding: 5px; width: 100%;">
+                                <option value="0">Select Function</option>
+                                <option value="1">Function #1</option>
+                                <option value="2">Function #2</option>
+                            </select>
+                            
+                            <div style="height: 20px"></div>
+
+                            <select style="padding: 5px; width: 100%;">
+                                <option value="0">Select Job Scope</option>
+                                <option value="1">Job Scope #1</option>
+                                <option value="2">Job Scope #2</option>
+                            </select>
+                        </div>
+                        
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <button id="execute-button">Execute</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-9 col-sm-8 col-xs-12" style="margin-bottom: 25px;">
+                <div id="ts-grid">
+
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#1">Job</a></li>
+                        <li><a data-toggle="tab" href="#2">Schedule</a></li>
+                        <li><a data-toggle="tab" href="#3">Gantt Tasks</a></li>
+                        <li><a data-toggle="tab" href="#4">Task Docs</a></li>
+                    </ul>
+
+                    <img src="static/img/refresh-icon.png" class="refresh-icon" />
+                    <img src="static/img/export-icon.png" id="export-icon" />
+
+                    <br />
+                    <div class="tab-content">
+                        <div id="1" class="tab-pane fade in active">
+                            <p>Job grid</p>
+                        </div>
+                        <div id="2" class="tab-pane fade">
+                            <p>Schedule grid</p>
+                        </div>
+                        <div id="3" class="tab-pane fade">
+                            <p>Gantt Tasks grid</p>
+                        </div>
+                        <div id="4" class="tab-pane fade">
+                            <p>Tasks Docs grid</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--CREATE MODAL-->
+    <div id="createModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Create Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Create a Template Swap</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row">
+                        <p class="form-label">Template Swap Name:</p>
+                        <input type="text" name="ts-name" style="height: 30px; width: 100%;">
+
+                        <br /><br />
+
+                        <p class="form-label">Description:</p>
+                        <textarea name="ts-description" style="height: 60px; width: 100%;"></textarea>
+
+                        <br /><br />
+
+                            <p class="form-label">Start Date:</p>
+                            <input type="text" id="datepicker" style="height: 30px; width: 45%;">
+                    </div>
+
+                    <div style="height: 1px; width: 100%; background-color: #dddddd; margin-bottom: 25px;"></div>
+
+                    <div class="row">
+                        <p class="form-label">Job Numbers:</p>
+                        <input type="text" name="job-numbers" style="height: 30px; width: 75%;"> <button type="button" id="add-button">Add</button>
+
+                        <br /><br />
+
+                        <div style="width: 100%; height: 300px; border: 1px #dddddd solid;">
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                        <center>
+                        <button type="button" id="create-button" data-dismiss="modal">Create</button><button type="button" id="cancel-button" data-dismiss="modal">Cancel</button>
+                        </center>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!--EDIT MODAL-->
+    <div id="editModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Edit Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Edit a Template Swap</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row">
+                        <p class="form-label">Template Swap Name:</p>
+                        <input type="text" name="ts-name" style="height: 30px; width: 100%;">
+
+                        <br /><br />
+
+                        <p class="form-label">Description:</p>
+                        <textarea name="ts-description" style="height: 60px; width: 100%;"></textarea>
+
+                        <br /><br />
+
+                        <div class="col-md-6 col-sm-6 col-xs-6" style="padding: 0;"><p class="form-label">Start Date:</p> <input type="text" id="datepicker2" style="height: 30px; width: 95%;"></div>
+                        <div class="col-md-6 col-sm-6 col-xs-6" style="padding: 0;"><p class="form-label">Completed Date:</p> <input type="text" id="datepicker3" style="height: 30px; width: 100%;"></div>
+                    </div>
+
+                    <div style="height: 1px; width: 100%; background-color: #dddddd; margin-bottom: 25px;"></div>
+
+                    <div class="row">
+                        <p class="form-label">Job Numbers:</p>
+                        <input type="text" name="job-numbers" style="height: 30px; width: 75%;"> <button type="button" id="add-button">Add</button>
+
+                        <br /><br />
+
+                        <div style="width: 100%; height: 300px; border: 1px #dddddd solid;">
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <center>
+                        <button type="button" id="save-button" data-dismiss="modal">Save</button><button type="button" id="cancel-button" data-dismiss="modal">Cancel</button>
+                    </center>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!--STATUS MODAL-->
+    <div id="statusModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Status Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">[Function Name]</h4>
+                </div>
+                <div class="modal-body" style="padding-bottom: 20px;">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
