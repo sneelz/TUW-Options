@@ -1,0 +1,278 @@
+body {
+  font-family: 'Calibri', 'Myriad Pro', 'sans-serif';
+  background-color: #3d3d3d;
+  overflow-x: hidden;
+}
+
+a {
+    color: #00b0ec;
+}
+
+.container{
+  width: 100%;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.container-fluid {
+    width: 100%;
+}
+
+.row {
+    padding-bottom: 25px;
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.navbar {
+    background-color: #3d3d3d !important;
+    background: #3d3d3d !important;
+    color: white !important;
+    border-bottom: none !important;
+}
+
+.navbar a {
+    color: white !important;
+    font-size: 16px;
+}
+
+#blue-background {
+    height: 50%;
+    max-height: 50%;
+    position: absolute;
+    width: 100%;
+    background-color: #00b0ec;
+    top: 0px;
+    left: 0px;
+    z-index: -5;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    border: none;
+    border-bottom: 3px #00b0ec solid;
+    color: #00b0ec;
+}
+
+.nav-tabs {
+    font-size: 16px;
+}
+
+.nav-tabs a {
+    color: #888888;
+}
+
+#ts-status {
+    background-color: white;
+    height: 560px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#ts-execute {
+    background-color: white;
+    height: 115px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-top: 15px;
+}
+
+#ts-grid {
+    background-color: white;
+    height: 700px;
+    overflow-y: auto;
+    overflow-x: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 3px;
+}
+
+#manage-grid {
+    background-color: white;
+    height: 700px;
+    overflow-y: auto;
+    overflow-x: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.header-text {
+    color: #00b0ec;
+    text-align: left;
+    font-size: 16px;
+    padding-top: 13px;
+}
+
+.header-row {
+    border-bottom: 1px #dddddd solid; 
+    margin: 0 auto; 
+    padding: 0; 
+    height: 50px; 
+    top: 0px;
+}
+
+.refresh-icon {
+    position: absolute;
+    right: 35px;
+    margin-top: -35px;
+}
+
+#export-icon {
+    position: absolute;
+    right: 62px;
+    margin-top: -35px;
+}
+
+#trash-icon {
+    position: absolute;
+    right: 62px;
+    margin-top: -35px;
+}
+
+.actions {
+    padding-top: 30px;
+}
+
+.actions li {
+    display: inline;
+}
+
+.edit-dates li {
+    display: inline;
+}
+
+#ts-dropdown {
+    float: right;
+    height: 30px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.ce-button {
+    height: 30px;
+    width: 100px;
+    border: 1px white solid;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    float: right;
+    background-color: transparent;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.ce-button:hover {
+    background-color: white;
+    color: #00b0ec;
+}
+
+#execute-button {
+    background-color: #00b0ec;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    vertical-align: center;
+    min-height: 30px;
+    height: 85px;
+    width: 100%;
+    border: none;
+}
+
+#execute-button:hover {
+    opacity: .8;
+}
+
+#add-button {
+    height: 30px;
+    width: 20%;
+    border: 1px #00b0ec solid;
+    text-align: center;
+    color: #00b0ec;
+    background-color: transparent;
+    font-size: 16px;
+    top: 1px;
+    float: right;
+}
+#add-button:hover {
+    background-color: #00b0ec;
+    color: white;
+}
+
+#create-button,
+#save-button {
+    height: 30px;
+    width: 100px;
+    background-color: #00b0ec;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    border: none;
+    margin-right: 10px;
+}
+
+#cancel-button {
+    height: 30px;
+    width: 100px;
+    background-color: transparent;
+    border: 1px #00b0ec solid;
+    text-align: center;
+    color: #00b0ec;
+    font-size: 16px;
+}
+
+#create-button:hover,
+#save-button:hover, 
+#cancel-button:hover {
+    opacity: .8;
+}
+
+h1.ts-name {
+    color: white;
+    font-size: 21px;
+    font-weight: 900;
+}
+
+p.ts-description {
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.modal-title {
+    color: #00b0ec !important;
+    font-size: 16px;
+}
+h4 {
+    color: #00b0ec;
+}
+p.form-label {
+    font-size: 13px;
+    color: #888888;
+}
+
+.more {
+    display: none;
+
+}
+a.showLink, a.hideLink {
+    color: white;
+}
+
+@media screen and (max-width: 768px){
+    #ts-execute {
+        height: 163px;
+    }
+
+    #execute-button {
+        height: 30px;
+    }
+
+    #ts-dropdown,
+    .ce-button {
+        float: none;
+        margin: 0 auto;
+        margin-right: 10px;
+    }
+}
