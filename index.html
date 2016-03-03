@@ -28,6 +28,7 @@
 
 <body>
 
+    <!--NAVBAR-->
     <nav class="navbar navbar-default" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -38,7 +39,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="">AT&T Template Swap Tool</a>
+                <a class="navbar-brand" href=""><img src="static/img/TS-logo.png" class="ts-logo"/></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -59,10 +60,11 @@
 
     </div>
 
+    <!--MAIN CONTAINER-->
     <div id="container-fluid">
 
         <div class="row">
-            <div class="col-md-7 col-sm-6 col-xs-12">
+            <div class="col-md-7 col-sm-5 col-xs-12">
                 <h1 class="ts-name">[Template Swap Name]</h1>
                 
                 <p class="ts-description"><a href="#" id="view-show" class="showLink" onclick="showHide('view');return false;">>> Show Details</a></p>
@@ -72,9 +74,8 @@
                 </div>
             </div>
 
-            <div class="actions col-md-5 col-sm-6 col-xs-12">
-                    
-                    <li id="ts-dropdown"><select style="padding: 5px;">
+            <div class="actions col-md-5 col-sm-7 col-xs-12">                    
+                    <li id="ts-dropdown"><select class="select-style">
                         <option value="0">Select a Template Swap</option>
                         <option value="1">Template Swap #1</option>
                         <option value="2">Template Swap #2</option>
@@ -85,30 +86,88 @@
         </div>
 
         <div class="row">
-            <div class="col-md-3 col-sm-4 col-xs-12" style="margin-bottom: 25px;">                 
+            <div class="margin-bottom-25 col-md-3 col-sm-4 col-xs-12">                 
                 <div id="ts-status">
                     <div class="row header-row">
                         <div class="header-text">Template Swap Status</div>
                     </div>
 
                     <br />
-                    <a data-toggle="modal" data-target="#statusModal">Status modal link</a>
+
+                    <div class="ts-status-container">
+                        <table class="width-100">
+                            <tr>
+                                <td></td>
+                                <td style="max-width: 170px;"><b>Name</b></td>
+                                <td><b>Status</b></td>
+                            </tr>
+
+                            <tr>
+                                <td><input type="checkbox" name="select1"></td>
+                                <td>Function #1</td>
+                                <td><a data-toggle="modal" data-target="#statusModal">Completed</a></td>
+                            </tr>
+
+                            <tr>
+                                <td><input type="checkbox" name="select2"></td>
+                                <td>Function #2</td>
+                                <td><a data-toggle="modal" data-target="#statusModal">Completed</a></td>
+                            </tr>
+
+                            <tr>
+                                <td><input type="checkbox" name="select2"></td>
+                                <td>Function #3</td>
+                                <td><a data-toggle="modal" data-target="#statusModal">Completed</a></td>
+                            </tr>
+
+                            <tr>
+                                <td><input type="checkbox" name="select2"></td>
+                                <td>Function #4</td>
+                                <td><a data-toggle="modal" data-target="#statusModal">Submitted</a></td>
+                            </tr>
+
+                            <tr>
+                                <td><input type="checkbox" name="select2"></td>
+                                <td>Function #5</td>
+                                <td><a data-toggle="modal" data-target="#statusModal">Submitted</a></td>
+                            </tr>
+
+                            <tr>
+                                <td><input type="checkbox" name="select2"></td>
+                                <td>Function #6</td>
+                                <td><a data-toggle="modal" data-target="#statusModal">Failed</a></td>
+                            </tr>
+
+                            <tr>
+                                <td><input type="checkbox" name="select2"></td>
+                                <td>Function #7</td>
+                                <td><a data-toggle="modal" data-target="#statusModal">Completed</a></td>
+                            </tr>
+
+                            <tr>
+                                <td><input type="checkbox" name="select2"></td>
+                                <td>Function #8</td>
+                                <td><a data-toggle="modal" data-target="#statusModal">Completed</a></td>
+                            </tr>
+
+                        </table>
+                    </div>
                 </div>
 
-                <div style="height:25px;"></div>
+                <div class="break-25"></div>
 
                 <div id="ts-execute">
                     <div id="row">
-                        <div class="col-md-8 col-sm-6 col-sm-12" style="margin-bottom: 20px;">
-                            <select style="padding: 5px; width: 100%;">
+                        <div class="margin-bottom-20 col-md-8 col-sm-6 col-sm-12">
+                            <select class="select-style-100">
                                 <option value="0">Select Function</option>
                                 <option value="1">Function #1</option>
                                 <option value="2">Function #2</option>
                             </select>
                             
-                            <div style="height: 20px"></div>
+                            <div class="break-20"></div>
 
-                            <select style="padding: 5px; width: 100%;">
+                            <select class="select-style-100">
                                 <option value="0">Select Job Scope</option>
                                 <option value="1">Job Scope #1</option>
                                 <option value="2">Job Scope #2</option>
@@ -122,9 +181,8 @@
                 </div>
             </div>
 
-            <div class="col-md-9 col-sm-8 col-xs-12" style="margin-bottom: 25px;">
+            <div class="margin-bottom-25 col-md-9 col-sm-8 col-xs-12">
                 <div id="ts-grid">
-
                     <ul class="nav nav-tabs">
                         <li class="active"><a data-toggle="tab" href="#1">Job</a></li>
                         <li><a data-toggle="tab" href="#2">Schedule</a></li>
@@ -132,26 +190,205 @@
                         <li><a data-toggle="tab" href="#4">Task Docs</a></li>
                     </ul>
 
-                    <img src="static/img/refresh-icon.png" class="refresh-icon" />
-                    <img src="static/img/export-icon.png" id="export-icon" />
+                    <a href=""><img src="static/img/refresh-icon.png" class="icon refresh-icon" /></a>
+                    <a href=""><img src="static/img/export-icon.png" id="export-icon" class="icon" /></a>
 
-                    <br />
-                    <div class="tab-content">
-                        <div id="1" class="tab-pane fade in active">
-                            <p>Job grid</p>
-                        </div>
-                        <div id="2" class="tab-pane fade">
-                            <p>Schedule grid</p>
-                        </div>
-                        <div id="3" class="tab-pane fade">
-                            <p>Gantt Tasks grid</p>
-                        </div>
-                        <div id="4" class="tab-pane fade">
-                            <p>Tasks Docs grid</p>
-                        </div>
-                    </div>
+                            <br />
 
-                </div>
+                            <div class="tab-content">
+                                <div id="1" class="tab-pane fade in active">
+                                    <div class="ts-grid-container">
+                                        <!--JOBS GRID-->
+                                        <table class="width-100">
+                                            <tr>
+                                                <td><input type="checkbox" name="selectAll"></td>
+                                                <td><b>Job Column 1</b></td>
+                                                <td><b>Job Column 2</b></td>
+                                                <td><b>Job Column 3</b></td>
+                                                <td><b>Job Column 4</b></td>
+                                                <td><b>Job Column 5</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" name="select1"></td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" name="select2"></td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" name="select3"></td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum </td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum </td>
+                                                <td>Lorem ipsum</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" name="select4"></td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div id="2" class="tab-pane fade">
+                                    <div class="ts-grid-container">
+                                        <!--SCHEDULE GRID-->
+                                        <table class="width-100">
+                                            <tr>
+                                                <td><input type="checkbox" name="selectAll"></td>
+                                                <td><b>Schedule Column 1</b></td>
+                                                <td><b>Schedule Column 2</b></td>
+                                                <td><b>Schedule Column 3</b></td>
+                                                <td><b>Schedule Column 4</b></td>
+                                                <td><b>Schedule Column 5</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" name="select1"></td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" name="select2"></td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" name="select3"></td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum </td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum </td>
+                                                <td>Lorem ipsum</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" name="select4"></td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div id="3" class="tab-pane fade">
+                                    <div class="ts-grid-container">
+                                        <!--GANTT TASKS GRID-->
+                                        <table class="width-100">
+                                            <tr>
+                                                <td><input type="checkbox" name="selectAll"></td>
+                                                <td><b>Gantt Tasks Column 1</b></td>
+                                                <td><b>Gantt Tasks Column 2</b></td>
+                                                <td><b>Gantt Tasks Column 3</b></td>
+                                                <td><b>Gantt Tasks Column 4</b></td>
+                                                <td><b>Gantt Tasks Column 5</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" name="select1"></td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" name="select2"></td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" name="select3"></td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum </td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum </td>
+                                                <td>Lorem ipsum</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" name="select4"></td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div id="4" class="tab-pane fade">
+                                    <div class="ts-grid-container">
+                                        <!--TASK DOCS GRID-->
+                                        <table class="width-100">
+                                            <tr>
+                                                <td><input type="checkbox" name="selectAll"></td>
+                                                <td><b>Task Docs Column 1</b></td>
+                                                <td><b>Task Docs Column 2</b></td>
+                                                <td><b>Task Docs Column 3</b></td>
+                                                <td><b>Task Docs Column 4</b></td>
+                                                <td><b>Task Docs Column 5</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" name="select1"></td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" name="select2"></td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" name="select3"></td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum </td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum </td>
+                                                <td>Lorem ipsum</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" name="select4"></td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                                <td>Lorem ipsum</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+</div>
             </div>
         </div>
 
@@ -167,36 +404,59 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">Create a Template Swap</h4>
                 </div>
-                <div class="modal-body">
 
+                <div class="modal-body">
                     <div class="row">
                         <p class="form-label">Template Swap Name:</p>
-                        <input type="text" name="ts-name" style="height: 30px; width: 100%;">
+                        <input type="text" name="ts-name" class="input-100">
 
                         <br /><br />
 
                         <p class="form-label">Description:</p>
-                        <textarea name="ts-description" style="height: 60px; width: 100%;"></textarea>
+                        <textarea name="ts-description" class="textarea-100"></textarea>
 
                         <br /><br />
 
-                            <p class="form-label">Start Date:</p>
-                            <input type="text" id="datepicker" style="height: 30px; width: 45%;">
+                        <p class="form-label">Start Date:</p>
+                        <input type="text" id="datepicker" class="input-45">
                     </div>
 
-                    <div style="height: 1px; width: 100%; background-color: #dddddd; margin-bottom: 25px;"></div>
+                    <div class="divider-line"></div>
 
                     <div class="row">
                         <p class="form-label">Job Numbers:</p>
-                        <input type="text" name="job-numbers" style="height: 30px; width: 75%;"> <button type="button" id="add-button">Add</button>
+                        <input type="text" name="job-numbers" class="input-75"> <button type="button" id="add-button">Add</button>
 
                         <br /><br />
 
-                        <div style="width: 100%; height: 30vh; min-height: 100px; border: 1px #dddddd solid;">
+                        <div class="ce-jobs-header">
+                            <input type="checkbox" name="selectAll" class="checkbox-style">
+                            <p class="ce-jobs-label"><b>Job Numbers</b></p>
+                            <p class="ce-jobs-delete"><a href="">Delete Selected</a></p>
+                        </div>
 
+                        <div class="ce-jobs-container">
+                            <!--CREATE JOBS MODAL GRID-->
+                            <table class="width-100">
+                                <tr>
+                                    <td><input type="checkbox" name="select1"></td>
+                                    <td>Lorem ipsum</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="select2"></td>
+                                    <td>Lorem ipsum</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="select3"></td>
+                                    <td>Lorem ipsum</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="select4"></td>
+                                    <td>Lorem ipsum</td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
-
                 </div>
 
                 <div class="modal-footer">
@@ -221,36 +481,59 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">Edit a Template Swap</h4>
                 </div>
-                <div class="modal-body">
 
+                <div class="modal-body">
                     <div class="row">
                         <p class="form-label">Template Swap Name:</p>
-                        <input type="text" name="ts-name" style="height: 30px; width: 100%;">
+                        <input type="text" name="ts-name" class="input-100">
 
                         <br /><br />
 
                         <p class="form-label">Description:</p>
-                        <textarea name="ts-description" style="height: 60px; width: 100%;"></textarea>
+                        <textarea name="ts-description" class="textarea-100"></textarea>
 
                         <br /><br />
 
-                        <div class="col-md-6 col-sm-6 col-xs-6" style="padding: 0;"><p class="form-label">Start Date:</p> <input type="text" id="datepicker2" style="height: 30px; width: 95%;"></div>
-                        <div class="col-md-6 col-sm-6 col-xs-6" style="padding: 0;"><p class="form-label">Completed Date:</p> <input type="text" id="datepicker3" style="height: 30px; width: 100%;"></div>
+                        <div class="padding-0 col-md-6 col-sm-6 col-xs-6"><p class="form-label">Start Date:</p> <input type="text" id="datepicker2" class="input-95"></div>
+                        <div class="padding-0 col-md-6 col-sm-6 col-xs-6"><p class="form-label">Completed Date:</p> <input type="text" id="datepicker3" class="input-100"></div>
                     </div>
 
-                    <div style="height: 1px; width: 100%; background-color: #dddddd; margin-bottom: 25px;"></div>
+                    <div class="divider-line"></div>
 
                     <div class="row">
                         <p class="form-label">Job Numbers:</p>
-                        <input type="text" name="job-numbers" style="height: 30px; width: 75%;"> <button type="button" id="add-button">Add</button>
+                        <input type="text" name="job-numbers" class="input-75"> <button type="button" id="add-button">Add</button>
 
                         <br /><br />
 
-                        <div style="width: 100%; height: 30vh; min-height: 100px; border: 1px #dddddd solid;">
+                        <div class="ce-jobs-header">
+                            <input type="checkbox" name="selectAll" class="checkbox-style">
+                            <p class="ce-jobs-label"><b>Job Numbers</b></p>
+                            <p class="ce-jobs-delete"><a href="">Delete Selected</a></p>
+                        </div>
 
+                        <div class="ce-jobs-container">
+                            <!--EDIT JOBS MODAL GRID-->
+                            <table class="width-100">
+                                <tr>
+                                    <td><input type="checkbox" name="select1"></td>
+                                    <td>Lorem ipsum</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="select2"></td>
+                                    <td>Lorem ipsum</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="select3"></td>
+                                    <td>Lorem ipsum</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="select4"></td>
+                                    <td>Lorem ipsum</td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
-
                 </div>
 
                 <div class="modal-footer">
@@ -275,7 +558,37 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">[Function Name]</h4>
                 </div>
-                <div class="modal-body" style="padding-bottom: 20px;">
+
+                <div class="modal-body padding-bottom-20">
+                    <!--TS STATUS MODAL GRID-->
+                    <div class="status-container">
+                        <table class="width-100">
+                            <tr>
+                                <td><b>Date Submitted</b></td>
+                                <td><b>Date Completed</b></td>
+                                <td><b>Status</b></td>
+                                <td><b>Message</b></td>
+                            </tr>
+                            <tr>
+                                <td>02/01/2016 12:30pm</td>
+                                <td></td>
+                                <td>Submitted</td>
+                                <td>Lorem ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>02/01/2016 12:21pm</td>
+                                <td>02/01/2016 12:17pm</td>
+                                <td>Failed</td>
+                                <td>Lorem ipsum</td>
+                            </tr>
+                            <tr>
+                                <td>02/01/2016 12:16pm</td>
+                                <td>02/01/2016 12:19pm</td>
+                                <td>Completed</td>
+                                <td>Lorem ipsum</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
 

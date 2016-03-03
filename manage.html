@@ -28,6 +28,7 @@
 
 <body>
 
+    <!--NAVBAR-->
     <nav class="navbar navbar-default" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -38,14 +39,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="">AT&T Template Swap Tool</a>
+                <a class="navbar-brand" href=""><img src="static/img/TS-logo.png" class="ts-logo" /></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-left"></ul>
                 <ul class="nav navbar-nav navbar-right">
-                    
+
                     <li><a href="/index.html">Main Page</a></li>
                     <li><a>Logout</a></li>
                     <li><a>Hello user!</a></li>
@@ -59,6 +60,7 @@
 
     </div>
 
+    <!--MAIN CONTAINER-->
     <div id="container-fluid">
 
         <div class="row">
@@ -70,16 +72,58 @@
         </div>
 
         <div class="row">
-
-            <div class="col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 25px;">
+            <div class="margin-bottom-25 col-md-12 col-sm-12 col-xs-12">
                 <div id="manage-grid">
                     <div class="row header-row">
                         <div class="header-text">Template Swaps</div>
                     </div>
 
-                    <img src="static/img/refresh-icon.png" class="refresh-icon" />
-                    <img src="static/img/trash-icon.png" id="trash-icon" />
+                    <a href=""><img src="static/img/refresh-icon.png" class="icon refresh-icon" /></a>
+                    <a href=""><img src="static/img/trash-icon.png" id="trash-icon" class="icon" /></a>
 
+                    <br />
+
+                    <div class="manage-grid-container">
+                        <!--TEMPLATE SWAP GRID-->
+                        <table class="width-100">
+                            <tr>
+                                <td><input type="checkbox" name="selectAll"></td>
+                                <td></td>
+                                <td><b>Name</b></td>
+                                <td><b>Job Count</b></td>
+                                <td><b>Start Date</b></td>
+                                <td><b>Completed Date</b></td>
+                                <td><b>Description</b></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="select1"></td>
+                                <td><a href="" data-toggle="modal" data-target="#manageEditModal"><img src="static/img/pencil-icon.png" class="icon" /></a></td>
+                                <td>Lorem ipsum</td> <!--Name-->
+                                <td>43</td> <!--Job Count-->
+                                <td>01/23/2016</td> <!--Start Date-->
+                                <td>01/24/2016</td> <!--Completed Date-->
+                                <td>Lorem ipsum dolor sit amet lorem ipsum dolor sit amet</td> <!--Description-->
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="select2"></td>
+                                <td><a href="" data-toggle="modal" data-target="#manageEditModal"><img src="static/img/pencil-icon.png" class="icon" /></a></td>
+                                <td>Lorem ipsum dolor sit</td>
+                                <td>28</td>
+                                <td>01/26/16</td>
+                                <td>02/01/16</td>
+                                <td>Lorem ipsum dolor sit amet</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="select3"></td>
+                                <td><a href="" data-toggle="modal" data-target="#manageEditModal"><img src="static/img/pencil-icon.png" class="icon" /></a></td>
+                                <td>Lorem ipsum dolor</td>
+                                <td>157 </td>
+                                <td>02/07/16</td>
+                                <td></td>
+                                <td>Lorem ipsum dolor sit amet lorem ipsum dolor sit amet</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -88,7 +132,7 @@
 
 
     <!--EDIT MODAL-->
-    <div id="editModal" class="modal fade" role="dialog">
+    <div id="manageEditModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
 
             <!-- Edit Modal content-->
@@ -97,36 +141,59 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">Edit a Template Swap</h4>
                 </div>
-                <div class="modal-body">
 
+                <div class="modal-body">
                     <div class="row">
                         <p class="form-label">Template Swap Name:</p>
-                        <input type="text" name="ts-name" style="height: 30px; width: 100%;">
+                        <input type="text" name="ts-name" class="input-100">
 
                         <br /><br />
 
                         <p class="form-label">Description:</p>
-                        <textarea name="ts-description" style="height: 60px; width: 100%;"></textarea>
+                        <textarea name="ts-description" class="textarea-100"></textarea>
 
                         <br /><br />
 
-                        <div class="col-md-6 col-sm-6 col-xs-6" style="padding: 0;"><p class="form-label">Start Date:</p> <input type="text" id="datepicker2" style="height: 30px; width: 95%;"></div>
-                        <div class="col-md-6 col-sm-6 col-xs-6" style="padding: 0;"><p class="form-label">Completed Date:</p> <input type="text" id="datepicker3" style="height: 30px; width: 100%;"></div>
+                        <div class="padding-0 col-md-6 col-sm-6 col-xs-6"><p class="form-label">Start Date:</p> <input type="text" id="datepicker2" class="input-95"></div>
+                        <div class="padding-0 col-md-6 col-sm-6 col-xs-6"><p class="form-label">Completed Date:</p> <input type="text" id="datepicker3" class="input-100"></div>
                     </div>
 
-                    <div style="height: 1px; width: 100%; background-color: #dddddd; margin-bottom: 25px;"></div>
+                    <div class="divider-line"></div>
 
                     <div class="row">
                         <p class="form-label">Job Numbers:</p>
-                        <input type="text" name="job-numbers" style="height: 30px; width: 75%;"> <button type="button" id="add-button">Add</button>
+                        <input type="text" name="job-numbers" class="input-75"> <button type="button" id="add-button">Add</button>
 
                         <br /><br />
 
-                        <div style="width: 100%; height: 30vh; min-height: 100px; border: 1px #dddddd solid;">
+                        <div class="ce-jobs-header">
+                            <input type="checkbox" name="selectAll" class="checkbox-style">
+                            <p class="ce-jobs-label"><b>Job Numbers</b></p>
+                            <p class="ce-jobs-delete"><a href="">Delete Selected</a></p>
+                        </div>
 
+                        <div class="ce-jobs-container">
+                            <!--EDIT JOBS MODAL GRID-->
+                            <table class="width-100">
+                                <tr>
+                                    <td><input type="checkbox" name="select1"></td>
+                                    <td>Lorem ipsum</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="select2"></td>
+                                    <td>Lorem ipsum</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="select3"></td>
+                                    <td>Lorem ipsum</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="select4"></td>
+                                    <td>Lorem ipsum</td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
-
                 </div>
 
                 <div class="modal-footer">
