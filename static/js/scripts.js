@@ -1,26 +1,20 @@
-// SHOW/HIDE DETAILS
-function showHide(shID) {
-    if (document.getElementById(shID)) {
-        if (document.getElementById(shID+'-show').style.display != 'none') {
-            document.getElementById(shID+'-show').style.display = 'none';
-            document.getElementById(shID).style.display = 'block';
-        }
-        else {
-            document.getElementById(shID+'-show').style.display = 'inline';
-            document.getElementById(shID).style.display = 'none';
-        }
+// SHOW ACTIVE NAVIGATION
+$(function(){
+  function stripTrailingSlash(str) {
+    if(str.substr(-1) == '/') {
+      return str.substr(0, str.length - 1);
     }
-}
+    return str;
+  }
 
-// JQUERY UI DATE PICKER
-$(function() {
-    $( "#datepicker" ).datepicker();
-});
+  var url = window.location.pathname;  
+  var activePage = stripTrailingSlash(url);
 
-$(function () {
-    $("#datepicker2").datepicker();
-});
+  $('.navbar li a').each(function(){  
+    var currentPage = stripTrailingSlash($(this).attr('href'));
 
-$(function () {
-    $("#datepicker3").datepicker();
+    if (activePage == currentPage) {
+      $(this).parent().addClass('active'); 
+    } 
+  });
 });
