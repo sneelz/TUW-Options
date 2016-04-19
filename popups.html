@@ -1,0 +1,383 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1;maximum-scale=1.0; user-scalable=0;">
+
+    <title>PACE Wizard Style Guide</title>
+
+    <!--SCRIPTS-->
+    <script src="static/bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="static/bower_components/d3/d3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>    
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <script src="static/js/scripts.js"></script>
+
+    <!--STYLESHEETS-->
+    <link rel="stylesheet" href="static/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="static/bower_components/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" href="static/bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    <link rel="stylesheet" href="static/css/style.css">
+    
+    <!--LIST BOX OPTION 1-->
+    <script>
+        $(document).ready(function () {
+            $('#btnRight').click(function (e) {
+                var selectedOpts = $('#lstBox1 option:selected');
+                if (selectedOpts.length == 0) {
+                    alert("Nothing to move.");
+                    e.preventDefault();
+                }
+
+                $('#lstBox2').append($(selectedOpts).clone());
+                $(selectedOpts).remove();
+                e.preventDefault();
+            });
+
+            $('#btnLeft').click(function (e) {
+                var selectedOpts = $('#lstBox2 option:selected');
+                if (selectedOpts.length == 0) {
+                    alert("Nothing to move.");
+                    e.preventDefault();
+                }
+
+                $('#lstBox1').append($(selectedOpts).clone());
+                $(selectedOpts).remove();
+                e.preventDefault();
+            });
+        });
+    </script>
+    
+    <!--LIST BOX OPTION 2-->
+    <script>
+      $(function() {
+        $( "#sortable1, #sortable2" ).sortable({
+          connectWith: ".connectedSortable"
+        }).disableSelection();
+      });
+    </script>
+
+    <!--OPEN NOTES IN WINDOW-->
+    <script>
+        function notesWin() {
+            var content = document.getElementById("notesWindow").innerHTML;
+            myWin = window.open('', 'myWin', 'menubar,scrollbars,left=0px,top=0px,bottom=0px,height=700px,width=600px');
+            myWin.document.write(content);
+        }
+    </script>
+</head>
+
+<body>
+
+    <!--SIDEBAR-->
+    <div id="sidebar">
+        <p class="nav_text">
+            <center><img src="static/img/att-globe.png" width="60" /></center>
+            <br />
+            <div class="divider_line" style="opacity: .2;"></div>
+            <br />
+            <a href="/colors.html">Colors</a><br /><br />
+            <a href="/buttons.html">Buttons & Icons</a><br /><br />
+            <a href="/typography.html">Typography</a><br /><br />
+            <a href="/navigation.html">Navigation</a><br /><br />
+            <a href="/popups.html">Popups</a><br /><br />
+            <a href="/search.html">Search</a><br />
+        </p>
+    </div>
+
+
+    <!--MAIN CONTAINER-->
+    <div id="main_container">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <b><p class="header_text">POPUPS</p></b>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <p class="popup_title">[Popup Title Here]</p>
+                            </div>
+
+                            <div class="modal-body fixed_height">
+                                <center><p class="modal_text">[ Popup Content Here ]</p></center>
+                            </div>
+
+                            <div class="modal-footer">
+                                <center>
+                                    <button type="button" class="primary_button" data-dismiss="modal">Primary button</button>&nbsp;&nbsp;<button type="button" class="secondary_button" data-dismiss="modal">Secondary button</button>
+                                </center>
+                            </div>
+                        </div>
+                        <br /><br />
+                </div>
+
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <p class="body_text">
+                        The same styling and layout is used for both modal popups and window popups, as seen in the example to the left. 
+                        <br /><br />
+                        The standard popup consists of three areas - a header, content area, and footer. The header contains the title of the popup. The content area contains the main content for the given popup. The footer contains any primary or secondary buttons associated with the popup. Each of the three areas has a 20px padding.
+                        <br /><br />
+                        <b>Modal Popup</b><br />
+                        When we want the user to complete an action one at a time, we use a modal popup. This ensures that the user cannot use the main interface while the modal popup is in view. Actions that require a modal popup include creating a custom search, creating a custom view, and bulk updating tasks.
+                        <br /><br />
+                        Sample modal popup:<br />
+                        <button type="button" class="primary_button" data-toggle="modal" data-target="#createModal">Click here to view sample 'Create View' modal</button>
+                        
+                        <br /><br />
+                        <b>Window Popup</b><br />
+                        When we want to allow the user to perform multiple actions simultaneously, we use a window popup. As opposed to the modal popup, the user is allowed to have multiple windows open at a time. Actions that require a window popup include viewing the task audit history and viewing job-related notes.
+                        <br /><br />
+                        Sample window popup:<br />
+                        <button type="button" class="primary_button" onclick="notesWin()">Click here to view sample 'Notes' window</button>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--CREATE VIEW MODAL-->
+    <div id="createModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!--CREATE VIEW MODAL CONTENT-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <p class="popup_title">Create a Custom View</p>
+                </div>
+
+                <div class="modal-body">                  
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <p class="modal_text">Custom View Name:</p>
+                        </div>
+
+                        <div class="col-md-8 col-sm-8 col-xs-8">
+                            <input type="text" value="" class="text_entry"/>
+                        </div>
+                    </div>
+
+                    <div class="divider_line"></div>
+                    
+                    <div class="row">
+                        <!--LIST BOX OPTION 1 [BUTTON CLICK]
+                        <p class="modal_text">
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td>
+                                        <b>Available Columns:</b><br /><br />
+                                        <select multiple="multiple" id='lstBox1'>
+                                            <option value="ajax">Ajax</option>
+                                            <option value="jquery">jQuery</option>
+                                        </select>
+                                    </td>
+                                    <td style="width: 20%; text-align: center; vertical-align: middle;">
+                                        <input type='button' id='btnRight' value='  >  ' />
+                                        <br /><br />
+                                        <input type='button' id='btnLeft' value='  <  ' />
+                                    </td>
+                                    <td>
+                                        <b>Selected Columns:</b><br /><br />
+                                        <select multiple="multiple" id='lstBox2'>
+                                            <option value="asp">ASP.NET</option>
+                                            <option value="c#">C#</option>
+                                            <option value="vb">VB.NET</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+                        </p>
+                        -->
+
+                        <!--START OF LIST BOX OPTION 2 [DRAG AND DROP]-->
+                        <center>
+                        <p class="modal_text">
+                            <div class="col-md-6 col-sm-6 col-xs-6"><b>Available Columns:</b><br /><br /></div>
+                            <div class="col-md-6 col-sm-6 col-xs-6"><b>Selected Columns:</b><br /><br /></div>
+                        <ul id="sortable1" class="connectedSortable">
+                            <li class="ui-state-default">Column 1</li>
+                            <li class="ui-state-default">Column 2</li>
+                            <li class="ui-state-default">Column 3</li>
+                            <li class="ui-state-default">Column 4</li>
+                            <li class="ui-state-default">Column 5</li>
+                        </ul>
+                        <ul id="sortable2" class="connectedSortable">
+                            <li class="ui-state-highlight">Column 6</li>
+                            <li class="ui-state-highlight">Column 7</li>
+                            <li class="ui-state-highlight">Column 8</li>
+                            <li class="ui-state-highlight">Column 9</li>
+                            <li class="ui-state-highlight">Column 10</li>
+                            <li class="ui-state-highlight">Column 11</li>
+                            <li class="ui-state-highlight">Column 12</li>
+                            <li class="ui-state-highlight">Column 13</li>
+                        </ul>
+                        </p>
+                        </center>
+                        <!--END OF LIST BOX OPTION 2 [DRAG AND DROP]-->
+                    </div>
+
+                    <div class="divider_line"></div>
+
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12"><p class="modal_text">Select groupings</p></div>
+
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <select class="dropdown">
+                                <option value="default">Select first grouping</option>
+                                <option value="group1">Grouping 1</option>
+                                <option value="group2">Grouping 2</option>
+                                <option value="group3">Grouping 3</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <select class="dropdown">
+                                <option value="default">Select second grouping</option>
+                                <option value="group1">Grouping 1</option>
+                                <option value="group2">Grouping 2</option>
+                                <option value="group3">Grouping 3</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <select class="dropdown">
+                                <option value="default">Select third grouping</option>
+                                <option value="group1">Grouping 1</option>
+                                <option value="group2">Grouping 2</option>
+                                <option value="group3">Grouping 3</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="divider_line"></div>
+
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12"><p class="modal_text">Select sorting</p></div>
+
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <select class="dropdown">
+                                <option value="default">Select first column</option>
+                                <option value="column1">Column 1</option>
+                                <option value="column2">Column 2</option>
+                                <option value="column3">Column 3</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <select class="dropdown">
+                                <option value="default">Select second column</option>
+                                <option value="column1">Column 1</option>
+                                <option value="column2">Column 2</option>
+                                <option value="column3">Column 3</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <select class="dropdown">
+                                <option value="default">Select third column</option>
+                                <option value="column1">Column 1</option>
+                                <option value="column2">Column 2</option>
+                                <option value="column3">Column 3</option>
+                            </select>
+                        </div>
+                    </div>
+
+                <div class="modal-footer">
+                    <center>
+                        <button type="button" class="primary_button" data-dismiss="modal">Create</button>&nbsp;&nbsp;<button type="button" class="secondary_button" data-dismiss="modal">Cancel</button>
+                    </center>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!--NOTES WINDOW-->
+    <div id="notesWindow" class="modal fade" role="dialog">  
+           
+        <!--Load page with CSS-->
+        <link rel="stylesheet" href="static/css/style.css">
+
+        <div class="window-dialog">
+
+            <!--NOTES WINDOW-->
+            <div class="window-content">
+                <div class="window-header">
+                    <p class="popup_title">[Job #] - [# of Notes]</p>
+                </div>
+
+                <div class="window-body">
+                    <div class="row">
+                        <div class="notes_container">
+                            <div class="note">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum, mi ut rutrum auctor, nibh nisi sodales nunc, scelerisque volutpat erat elit ut diam. Phasellus ac tristique mi, et accumsan mauris.
+                                <br /><br />
+                                <div class="timestamp">
+                                    ATTUID on 05-12-2016
+                                </div>
+                            </div>
+
+                            <div class="note">
+                                Lorem ipsum dolor sit amet lorem ipsum dolor sit amet
+                                <br /><br />
+                                <div class="timestamp">
+                                    ATTUID on 04-19-2016
+                                </div>
+                            </div>
+
+                            <div class="note">
+                                Etiam vehicula euismod magna, nec porttitor risus vehicula sit amet. Nulla sit amet tellus nec enim porta finibus in et ante. Nunc viverra ante vitae vulputate luctus. Proin et nulla vitae leo accumsan facilisis sed eu mauris. Praesent sed turpis sit amet ligula egestas suscipit. Duis id justo quam. Donec tempus urna quis bibendum vulputate.
+                                <br /><br />
+                                <div class="timestamp">
+                                    ATTUID on 04-07-2016
+                                </div>
+                            </div>
+
+                            <div class="note">
+                                Donec volutpat eleifend turpis quis fringilla. Cras pharetra vehicula turpis id volutpat. Phasellus hendrerit suscipit arcu, a viverra purus gravida vel. Vestibulum eget urna placerat, fermentum ligula a, bibendum risus. Pellentesque aliquet sollicitudin enim hendrerit imperdiet.
+                                <br /><br />
+                                <div class="timestamp">
+                                    ATTUID on 04-07-2016
+                                </div>
+                            </div>
+
+                            <div class="note">
+                                Curabitur posuere ex at lorem mollis, quis tincidunt justo maximus. Curabitur non pharetra libero, faucibus ultricies purus. Sed eget hendrerit urna, sit amet scelerisque dui.
+                                <br /><br />
+                                <div class="timestamp">
+                                    ATTUID on 04-07-2016
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <textarea class="note_entry" /></textarea>
+                    </div>
+                </div>
+
+                <div class="window-footer">                   
+                        <button type="button" class="primary_button" onclick="self.close()">Save</button>&nbsp;&nbsp;<button type="button" class="secondary_button" onclick="self.close()">Cancel</button>                  
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
