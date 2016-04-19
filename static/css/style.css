@@ -9,6 +9,10 @@ a {
     cursor: pointer;
 }
 
+.active {
+    font-weight: 600;
+}
+
 button {
     cursor: pointer;
 }
