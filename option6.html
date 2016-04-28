@@ -1,0 +1,252 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1;maximum-scale=1.0; user-scalable=0;">
+
+    <title>TUW Option 6</title>
+
+    <!--SCRIPTS-->
+    <script src="static/bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="static/bower_components/d3/d3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+    <script src="static/js/scripts.js"></script>
+
+    <!--STYLESHEETS-->
+    <link rel="stylesheet" href="static/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="static/bower_components/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" href="static/bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    <link rel="stylesheet" href="static/css/style.css">
+
+    <!--SHOW/HIDE SEARCH SIDEBAR-->
+    <script>
+        var pinClicked = false;
+
+        function pinClick() {
+            if (pinClicked) {
+                $("#grid_container").css({ "width": "100%" });
+                $("#grid_container").css({ "margin-left": "0" });
+                $("#pin_icon").css({ "opacity": ".5" });
+                pinClicked = false;
+            }
+
+            else {
+                $("#grid_container").css({ "width": "calc(100% - 250px)" });
+                $("#grid_container").css({ "margin-left": "250px" });
+                $("#pin_icon").css({ "opacity": "1" });
+                pinClicked = true;
+            }
+        }
+
+        function showSidebar() {
+            $("#search_sidebar").css({ "display": "block" });
+        }
+
+        function hideSidebar() {
+            if (!pinClicked) {
+                $("#search_sidebar").css({ "display": "none" });
+            }
+
+        }
+    </script>
+
+    <!--SHOW MULTISELECT DROPDOWN CHECKBOXES-->
+    <script>
+    var expanded = false;
+    function showCheckboxes() {
+        var checkboxes = document.getElementById("checkboxes");
+        if (!expanded) {
+            checkboxes.style.display = "block";
+            expanded = true;
+
+        }
+        else {
+            checkboxes.style.display = "none";
+            expanded = false;
+        }
+    }
+    </script>
+
+    <!--
+    <script>
+        var expanded = false;
+        var checkboxes = document.getElementById("checkboxes");
+        $(document).click(function (event) {
+            if (!expanded) {
+                $("#selectBox").click(function () {
+                    $("#checkboxes").css({ "display": "block" });
+                    expanded = true;
+                }
+            )
+            }
+
+            else {
+                $("#selectBox").click(function () {
+                    $("#checkboxes").css({ "display": "none" });
+                    expanded = false;
+                )}
+
+                if($(event.target).is('#checkboxes')) {
+                    $("#checkboxes").css({ "display": "block" });
+                    expanded = true;
+                }
+
+                else if(!$(event.target).is('#checkboxes')) {
+                    $("#checkboxes").css({ "display": "none" });
+                    expanded = false;
+                }
+        }
+    </script>
+    -->
+    <!--MULTISELECT DROPDOWN SELECT ALL CHECKBOX-->
+    <script>
+        function toggle(source) {
+            checkboxes = document.getElementsByName('check');
+            for (var i = 0, n = checkboxes.length; i < n; i++) {
+                checkboxes[i].checked = source.checked;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <div id="hover_bar" onmouseover="showSidebar();"></div>
+
+    <div id="grid_container">
+
+        <!--START OF PACE HEADER NAV-->
+        <div id="header" style="background: #2f3a4c !important;">
+            <img src="static/img/att-globe.png" style="height: 45px; float: left; margin-left: 10px; margin-top: 5px;" />
+            <div style="height: 100%; float: left; margin-left: 15px; display: inline-block;">
+                <p class="page_title">PACE Task Update Wizard</p>
+                <br />
+                <p class="page_subtitle">Version 2.1.1</p>
+            </div>
+            <ul class="nav site-nav" style="float: right; margin-top: 12px; margin-right: 10px; display: inline-block;">
+                <li class="flyout">
+                    <a href="/" style="background: #2f3a4c; color: #1EAEE4;">PACE Links</a>
+                    <!-- Flyout -->
+                    <ul class="flyout-content nav stacked" style="border: none;">
+                        <li><a href="" style="background: #2f3a4c;">One</a></li>
+                        <li><a href="" style="background: #2f3a4c;">Two</a></li>
+                        <li><a href="" style="background: #2f3a4c;">Three</a></li>
+                    </ul>
+                </li>
+                <li class="flyout">
+                    <a href="/" style="background: #2f3a4c; color: #1EAEE4;">Wizards</a>
+                    <!-- Flyout -->
+                    <ul class="flyout-content nav stacked" style="border: none;">
+                        <li><a href="" style="background: #2f3a4c; border-top: none;">One</a></li>
+                        <li><a href="" style="background: #2f3a4c;">Two</a></li>
+                        <li><a href="" style="background: #2f3a4c;">Three</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--END OF PACE HEADER NAV-->
+
+        <div class="buttons_container">
+            <div style="display: inline-block;">
+                <button class="secondary_button" style="border: 1px #1EAEE4 solid !important; color: #1EAEE4;">R</button>&nbsp;&nbsp;
+                <button class="secondary_button" style="border: 1px #1EAEE4 solid !important; color: #1EAEE4;">E</button>&nbsp;&nbsp;
+                <button class="primary_button" style="background: #1EAEE4 !important; border: 1px #1EAEE4 solid !important;">Create View</button>&nbsp;&nbsp;
+                <select class="dropdown" style="width: 200px !important; padding: 9px !important; top: -1px !important;">
+                    <option>Default View</option>
+                    <option>Custom View #1</option>
+                    <option>Custom View #2</option>
+                </select>&nbsp;&nbsp;
+                <button class="primary_button" style="background: #1EAEE4 !important; border: 1px #1EAEE4 solid !important;">E</button>&nbsp;&nbsp;
+                <button class="primary_button" style="background: #1EAEE4 !important; border: 1px #1EAEE4 solid !important;">D</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label for="mytasks" style="font-weight: 400;"><input type="checkbox" />&nbsp;&nbsp;My Tasks</label>&nbsp;&nbsp;
+                <label for="workgrouptasks" style="font-weight: 400;"><input type="checkbox" />&nbsp;&nbsp;Workgroup Tasks</label>
+            </div>
+
+            <div style="float: right; display: inline-block; padding-top: 10px;">
+                <div class="heatmap_square" style="background: red;" title="Overdue"></div>&nbsp;&nbsp;
+                <div class="heatmap_square" style="background: yellow;" title="Due within 14 days"></div>&nbsp;&nbsp;
+                <div class="heatmap_square" style="background: white;" title="Due after 14 days"></div>&nbsp;&nbsp;&nbsp;
+                <p style="display: inline;"><b>Selected Steps: 0 / 0</b></p>
+            </div>
+        </div>
+
+        <div id="task_grid">
+            <img src="static/img/task-grid.png" id="grid_screenshot" />
+        </div>
+
+        <div class="buttons_container">
+            <button class="secondary_button" style="border: 1px #1EAEE4 solid !important; color: #1EAEE4;">Update Selected Tasks</button>
+            <button class="primary_button" style="background: #1EAEE4 !important; border: 1px #1EAEE4 solid !important; float: right;">Submit</button>
+        </div>
+    </div>
+
+    <!--START OF SEARCH SIDEBAR-->
+    <div id="search_sidebar" class="slideRight" onmouseover="showSidebar();" onmouseout="hideSidebar();" style="background: #f6f6f6; border-right: 1px #d6d6d6 solid;">
+        <div id="search_header" style="background: #e6e6e6 !important; border-bottom: 1px #d6d6d6 solid;">
+            <p class="search_header" style="color: #202020 !important;">Search for Tasks</p>
+            <p class="search_text" style="color: #202020 !important;">Select a saved search:</p>
+            <select class="dropdown">
+                <option>Select a custom search</option>
+                <option>Custom Search #1</option>
+                <option>Custom Search #2</option>
+            </select>
+            <em><p class="search_text" style="margin-top: 10px; margin-bottom: 0px;"><a href="" style="color: #1EAEE4 !important;">Create a custom search</a></p></em>
+            <span id="pin_icon" onclick="pinClick();"><img src="static/img/blue-pin.png" width="20" style="margin-top: 20px;" /></span>
+        </div>
+
+        <div id="search_content">
+            <p class="search_title" style="color: #202020 !important;">[Custom Search Title]</p>
+
+            <div class="dropdown_container">
+                <div id="multiselect">
+                    <div id="selectBox" onclick="showCheckboxes();">
+                        <select>
+                            <option>Select search criteria</option>
+                        </select>
+                        <div class="overSelect"></div>
+                    </div>
+                    <div id="checkboxes">
+                        <label for="">Select search criteria</label>
+                        <label for="all"><input type="checkbox" id="all" onClick="toggle(this)" /> Select All</label>
+                        <label for="one"><input type="checkbox" id="one" name="check" /> Search criterion #1</label>
+                        <label for="two"><input type="checkbox" id="two" name="check" /> Search criterion #2</label>
+                        <label for="three"><input type="checkbox" id="three" name="check" /> Search criterion #3</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="add_container">
+                <button class="secondary_button2" style="border: 1px #1EAEE4 solid !important; color: #1EAEE4;">Add</button>
+            </div>
+
+            <div id="search_criteria" style="background: #e6e6e6 !important; border: 1px #d6d6d6 solid;">
+            </div>
+
+            <div class="reset_container">
+                <button class="secondary_button2" style="border: 1px #1EAEE4 solid !important; color: #1EAEE4;">Reset</button>
+            </div>
+
+            <div class="save_container">
+                <button class="secondary_button2" style="border: 1px #1EAEE4 solid !important; color: #1EAEE4;">Save</button>
+            </div>
+
+            <div class="search_container">
+                <button class="primary_button" style="background: #1EAEE4 !important; border: 1px #1EAEE4 solid !important;">Search</button>
+            </div>
+
+            <div class="editdelete_container">
+                <p class="editdelete_text" style="color: #1EAEE4 !important;"><a href="" style="color: #1EAEE4 !important;">Edit</a>&nbsp;&nbsp;&nbsp;<a href="" style="color: #1EAEE4 !important;">Delete</a></p><button class="help_button" style="border: 1px #1EAEE4 solid; color: #1EAEE4;">?</button>
+            </div>
+        </div>
+    </div>
+    <!--END OF SEARCH SIDEBAR-->
+
+</body>
+</html>
