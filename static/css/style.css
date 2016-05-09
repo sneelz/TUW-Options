@@ -1,6 +1,6 @@
 @font-face {
     font-family: Omnes;
-    src: url(/TUW-Options/OmnesATTRegular.otf) format("opentype");
+    src: url(file:///C:/Users/Sara/Documents/PACE%20Wizard%20Style%20Guide/OmnesATTRegular.otf) format("opentype");
 }
 
 body {
@@ -76,7 +76,7 @@ button {
     border-radius: 3px;
     padding: 10px 10px 5px 10px;
     border: 1px #156FB7 solid;
-    font-family: Omnes;
+    font-family: Omnes, sans-serif, Arial;
 }
 
 .primary_button:hover {
@@ -90,7 +90,7 @@ button {
     border-radius: 3px;
     padding: 10px 10px 5px 10px;
     border: 1px #156FB7 solid;
-    font-family: Omnes;
+    font-family: Omnes, sans-serif, Arial;
     opacity: .7;
 }
 
@@ -101,7 +101,7 @@ button {
     border-radius: 3px;
     padding: 10px 10px 5px 10px;
     border: 1px #156FB7 solid;
-    font-family: Omnes;
+    font-family: Omnes, sans-serif, Arial, sans-serif, Arial;
 }
 
 .secondary_button:hover {
@@ -115,7 +115,7 @@ button {
     border-radius: 3px;
     padding: 10px 10px 5px 10px;
     border: 1px #156FB7 solid;
-    font-family: Omnes;
+    font-family: Omnes, sans-serif, Arial;
     opacity: .7;
 }
 
@@ -126,7 +126,7 @@ button {
     border-radius: 3px;
     padding: 10px 10px 5px 10px;
     border: 1px white solid;
-    font-family: Omnes;
+    font-family: Omnes, sans-serif, Arial;
 }
 
 .secondary_button2:hover {
@@ -140,7 +140,7 @@ button {
     border-radius: 3px;
     padding: 10px 10px 5px 10px;
     border: 1px white solid;
-    font-family: Omnes;
+    font-family: Omnes, sans-serif, Arial;
     opacity: .7;
 }
 
@@ -218,7 +218,7 @@ ul{
     color: white;
     white-space: nowrap;
     font-size: 16px;
-    font-family: Omnes;
+    font-family: Omnes, sans-serif, Arial;
 }
 
 .site-nav .flyout:hover > a,
@@ -286,7 +286,7 @@ ul{
     width: 100%;
     padding: 5px;
     color: #555555;
-    font-family: Omnes;
+    font-family: Omnes, sans-serif, Arial;
     font-size: 14px;
     margin-top: -5px;
 }
@@ -294,7 +294,7 @@ ul{
 .dropdown {
     padding: 5px;
     width: 100%;
-    font-family: Omnes;
+    font-family: Omnes, sans-serif, Arial;
     font-size: 14px;
 }
 
@@ -354,7 +354,7 @@ ul{
 #sortable1 li, #sortable2 li {
     padding: 5px;
     font-size: 14px;
-    font-family: Omnes;
+    font-family: Omnes, sans-serif, Arial;
     color: #202020;
     width: 100%;
     margin-bottom: 2px;
@@ -399,7 +399,7 @@ ul{
     padding: 10px;
     border-bottom: 1px #d6d6d6 solid;
     font-size: 14px;
-    font-family: Omnes;
+    font-family: Omnes, sans-serif, Arial;
 }
 
 .timestamp {
@@ -408,7 +408,7 @@ ul{
     text-align: right;
     font-style: italic;
     font-size: 14px;
-    font-family: Omnes;
+    font-family: Omnes, sans-serif, Arial;
     color: #555555;
     padding-right: 20px;
 
@@ -619,7 +619,7 @@ ul{
 #selectBox select {
     width: 100%;
     font-size: 14px;
-    font-family: Omnes;
+    font-family: Omnes, sans-serif, Arial;
     padding: 5px;
     border: none;
 }
@@ -636,7 +636,7 @@ ul{
     margin-top: 28px;
     background: white;
     font-size: 14px;
-    font-family: Omnes;
+    font-family: Omnes, sans-serif, Arial;
     padding: 5px;
     width: 65%;
 }
@@ -644,7 +644,7 @@ ul{
 #checkboxes label {
     display: block;
     font-size: 14px;
-    font-family: Omnes;
+    font-family: Omnes, sans-serif, Arial;
     font-weight: 300;
 }
 
@@ -685,7 +685,7 @@ p.page_title {
     font-size: 21px;
     font-weight: 600;
     margin-right: 130px;
-    font-family: Omnes;
+    font-family: Omnes, sans-serif, Arial;
     padding-top: 7px;
 }
 
@@ -694,7 +694,7 @@ p.page_subtitle {
     font-size: 14px;
     font-weight: 300;
     margin-right: 130px;
-    font-family: Omnes;
+    font-family: Omnes, sans-serif, Arial;
     margin-top: -35px;
 }
 
@@ -704,7 +704,7 @@ p.navigation_text {
     font-weight: 600;
     text-align: left;
     margin-left: 20px;
-    font-family: Omnes;
+    font-family: Omnes, sans-serif, Arial;
     margin-top: -32px;
 }
 
@@ -712,7 +712,7 @@ p.navigation_text {
 p.popup_title {
     font-size: 18px;
     color: #156FB7;
-    font-family: Omnes;
+    font-family: Omnes, sans-serif, Arial;
     font-weight: 600;
     margin: 0;
 }
@@ -720,28 +720,28 @@ p.popup_title {
 p.modal_text {
     font-size: 14px;
     color: black;
-    font-family: Omnes;
+    font-family: Omnes, sans-serif, Arial;
 }
 
 /*SEARCH*/
 p.search_header {
     font-size: 21px;
     color: white;
-    font-family: Omnes;
+    font-family: Omnes, sans-serif, Arial;
     font-weight: 600;
 }
 
 p.search_text {
     font-size: 14px;
     color: white;
-    font-family: Omnes;
+    font-family: Omnes, sans-serif, Arial;
     font-weight: 300;
 }
 
 p.search_title {
     font-size: 18px;
     color: white;
-    font-family: Omnes;
+    font-family: Omnes, sans-serif, Arial;
     font-weight: 600;
     margin-top: 10px;
 }
@@ -749,7 +749,7 @@ p.search_title {
 p.editdelete_text {
     font-size: 14px;
     color: white;
-    font-family: Omnes;
+    font-family: Omnes, sans-serif, Arial;
     font-weight: 300;
     display: inline;
 }
@@ -765,7 +765,7 @@ p.taskgrid_text {
 p.nav_text {
     color: white;
     font-size: 16px;
-    font-family: Omnes;
+    font-family: Omnes, sans-serif, Arial;
     margin: 0;
 }
 
